@@ -25,9 +25,7 @@ export default function Footer() {
                 <div className="grid gap-10 lg:grid-cols-[1.25fr_0.85fr_0.9fr_0.9fr]">
                     <div>
                         <div className="flex items-center gap-3">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#ff7a1a] text-white shadow-[0_12px_28px_rgba(255,122,26,0.4)]">
-                                <CarFront size={24} strokeWidth={2.1} />
-                            </div>
+                            <img src="src\assets\logo.png" alt="TravelWala logo" className="h-12 w-auto object-contain sm:h-14" />
                             <h2 className="text-3xl font-bold tracking-tight">
                                 Travel<span className="text-[#ff7a1a]">Wala</span>
                             </h2>

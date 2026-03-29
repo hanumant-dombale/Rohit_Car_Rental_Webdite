@@ -36,7 +36,7 @@ export default function Navbar() {
         <header className="absolute inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/35 px-6 py-4 backdrop-blur-xl sm:px-8 lg:px-10">
             <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
                 <Button type="button" variant="ghost" onClick={() => goToSection('home')} className="h-auto p-0 hover:bg-transparent">
-                    <img src="/logo.png" alt="TravelWala logo" className="h-12 w-auto object-contain sm:h-14" />
+                    <img src="src\assets\logo.png" alt="TravelWala logo" className="h-12 w-auto object-contain sm:h-14" />
                     <span className="text-2xl font-bold tracking-tight text-white">
                         Travel<span className="text-[#ff7a1a]">Wala</span>
                     </span>
