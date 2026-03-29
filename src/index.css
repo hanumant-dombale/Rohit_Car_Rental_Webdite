@@ -40,3 +40,55 @@
         --radius: 0.5rem;
     }
 }
+
+@layer utilities {
+    @keyframes soft-rise {
+        from {
+            opacity: 0;
+            transform: translate3d(0, 32px, 0);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    @keyframes soft-fade {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .animate-soft-rise {
+        animation: soft-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .animate-soft-fade {
+        animation: soft-fade 1s ease both;
+    }
+
+    .animate-delay-100 {
+        animation-delay: 0.1s;
+    }
+
+    .animate-delay-200 {
+        animation-delay: 0.2s;
+    }
+
+    .animate-delay-300 {
+        animation-delay: 0.3s;
+    }
+
+    .animate-delay-400 {
+        animation-delay: 0.4s;
+    }
+
+    .animate-delay-500 {
+        animation-delay: 0.5s;
+    }
+}
