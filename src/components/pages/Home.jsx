@@ -2,6 +2,7 @@ import homeSection from '../../assets/home_section.png'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { BadgeCheck, CalendarDays, CarFront, Clock3, MapPin, PhoneCall, Route, Search, ShieldCheck, Star, UserRoundPlus } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 const featureStrip = [
     {
@@ -152,7 +153,7 @@ export default function Home() {
                                     <HeroField icon={MapPin} placeholder="Drop Location" />
                                     <HeroField icon={CalendarDays} placeholder="Tue, Apr 23, 01:00 PM" type="text" />
                                 </div>
-                                <button className="mt-4 inline-flex w-full items-center justify-center rounded-2xl bg-[#ff7a1a] px-6 py-4 text-base font-semibold text-white transition hover:bg-[#ea6a0c] sm:w-auto sm:min-w-60">Search Car</button>
+                                <Button className="mt-4 h-auto w-full rounded-2xl bg-[#ff7a1a] px-6 py-4 text-base font-semibold text-white hover:bg-[#ea6a0c] sm:w-auto sm:min-w-60">Search Car</Button>
                             </div>
                         </div>
 
@@ -199,7 +200,7 @@ export default function Home() {
                     </div>
 
                     <div className="mt-10 text-center">
-                        <button className="inline-flex items-center justify-center rounded-2xl bg-[#ff7a1a] px-8 py-4 text-base font-semibold text-white transition hover:bg-[#ea6a0c]">Book Your Ride Now</button>
+                        <Button className="h-auto rounded-2xl bg-[#ff7a1a] px-8 py-4 text-base font-semibold text-white hover:bg-[#ea6a0c]">Book Your Ride Now</Button>
                     </div>
                 </div>
             </section>
@@ -214,7 +215,9 @@ export default function Home() {
                                     <StepCard key={item.title} {...item} />
                                 ))}
                             </div>
-                            <button className="mt-8 inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-950 shadow-sm transition hover:border-[#ff7a1a] hover:text-[#ff7a1a]">Book Your Ride Now</button>
+                            <Button variant="outline" className="mt-8 h-auto rounded-2xl border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-950 shadow-sm hover:border-[#ff7a1a] hover:bg-white hover:text-[#ff7a1a]">
+                                Book Your Ride Now
+                            </Button>
                         </div>
 
                         <aside className="relative overflow-hidden rounded-[34px] bg-slate-950 p-8 text-white shadow-[0_28px_80px_rgba(15,23,42,0.22)]">
@@ -242,8 +245,10 @@ export default function Home() {
                                 </ul>
 
                                 <div className="mt-8 flex flex-wrap gap-4">
-                                    <button className="inline-flex items-center justify-center rounded-2xl bg-[#ff7a1a] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#ea6a0c]">Register as Driver</button>
-                                    <button className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/15">Download App</button>
+                                    <Button className="h-auto rounded-2xl bg-[#ff7a1a] px-6 py-3 text-sm font-semibold text-white hover:bg-[#ea6a0c]">Register as Driver</Button>
+                                    <Button variant="outline" className="h-auto rounded-2xl border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/15 hover:text-white">
+                                        Download App
+                                    </Button>
                                 </div>
                             </div>
                         </aside>

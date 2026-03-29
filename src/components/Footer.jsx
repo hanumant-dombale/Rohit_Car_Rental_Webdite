@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { CarFront, Facebook, Instagram, Mail, MapPin, Phone, Twitter } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 const footerLinks = {
     company: [
@@ -34,9 +35,9 @@ export default function Footer() {
                         <p className="mt-5 max-w-sm text-sm leading-7 text-slate-300">Reliable car rentals and booking support for local travel, airport transfers, and outstation rides.</p>
                         <div className="mt-6 flex gap-3">
                             {socialLinks.map(({ label, icon: Icon }) => (
-                                <button key={label} type="button" aria-label={label} className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition hover:border-[#ff7a1a] hover:text-[#ff7a1a]">
+                                <Button key={label} type="button" variant="ghost" size="icon" aria-label={label} className="rounded-full border border-white/10 bg-white/5 text-slate-200 hover:border-[#ff7a1a] hover:bg-white/10 hover:text-[#ff7a1a]">
                                     <Icon size={18} />
-                                </button>
+                                </Button>
                             ))}
                         </div>
                     </div>
@@ -77,7 +78,7 @@ export default function Footer() {
                                 <span>Mumbai, India</span>
                             </p>
                         </div>
-                        <button className="mt-6 rounded-xl bg-[#ff7a1a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#ea6a0c]">Call Us Now</button>
+                        <Button className="mt-6 h-auto rounded-xl bg-[#ff7a1a] px-5 py-3 text-sm font-semibold text-white hover:bg-[#ea6a0c]">Call Us Now</Button>
                     </div>
                 </div>
 
