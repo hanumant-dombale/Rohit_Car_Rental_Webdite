@@ -4,10 +4,17 @@ import Footer from './components/Footer.jsx'
 
 export default function Layout() {
     return (
-        <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <div
+            className="
+        min-h-screen w-full
+        flex flex-col
+        bg-[linear-gradient(180deg,#f7efe6_0%,#fff8f1_32%,#f5efe8_100%)]
+        text-slate-950
+      "
+        >
             <Navbar />
 
-            <main style={{ flex: 1, padding: '16px' }}>
+            <main className="flex-1 w-full">
                 <Outlet />
             </main>
 
