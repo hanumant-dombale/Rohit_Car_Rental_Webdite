@@ -44,6 +44,13 @@ export default function Navbar() {
         return location.hash === `#${sectionId}` || (location.hash === '' && sectionId === 'home')
     }
 
+    const desktopNavItemClass = (sectionId) =>
+        `h-auto p-0 font-medium transition-colors hover:bg-transparent focus-visible:bg-transparent active:bg-transparent ${isShrunk ? 'text-sm' : 'text-base'} ${
+            isActive(sectionId) ? 'text-[#ff7a1a] underline decoration-2 underline-offset-8 hover:text-[#ff7a1a] focus-visible:text-[#ff7a1a]' : 'text-white hover:text-[#ff7a1a] focus-visible:text-[#ff7a1a]'
+        }`
+
+    const mobileNavItemClass = (sectionId) => `block h-auto w-full rounded-xl px-3 py-2 text-left text-sm font-medium transition-colors ${isActive(sectionId) ? 'bg-white/10 text-[#ff7a1a] hover:bg-white/10 hover:text-[#ff7a1a]' : 'text-white hover:bg-white/5 hover:text-[#ff7a1a]'}`
+
     return (
         <header className={`animate-soft-fade fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isShrunk ? 'px-4 pt-4 sm:px-6 lg:px-8' : 'px-0 pt-0'}`}>
             <div
@@ -60,7 +67,7 @@ export default function Navbar() {
 
                 <nav className={`hidden items-center transition-all duration-300 lg:flex ${isShrunk ? 'gap-8' : 'gap-12'}`}>
                     {navItems.map((item) => (
-                        <Button key={item.sectionId} type="button" variant="ghost" onClick={() => goToSection(item.sectionId)} className={`h-auto p-0 font-medium transition ${isShrunk ? 'text-sm' : 'text-base'} ${isActive(item.sectionId) ? 'text-[#ff7a1a]' : 'text-white/80 hover:text-white'}`}>
+                        <Button key={item.sectionId} type="button" variant="ghost" onClick={() => goToSection(item.sectionId)} className={desktopNavItemClass(item.sectionId)}>
                             {item.label}
                         </Button>
                     ))}
@@ -82,13 +89,7 @@ export default function Navbar() {
                 <div className="mx-auto mt-3 max-w-7xl rounded-[28px] border border-white/10 bg-slate-950/90 px-5 py-4 text-white backdrop-blur-xl lg:hidden">
                     <div className="space-y-3">
                         {navItems.map((item) => (
-                            <Button
-                                key={item.sectionId}
-                                type="button"
-                                variant="ghost"
-                                onClick={() => goToSection(item.sectionId)}
-                                className={`block h-auto w-full rounded-xl px-3 py-2 text-left text-sm font-medium transition ${isActive(item.sectionId) ? 'bg-white/10 text-[#ff7a1a]' : 'text-white/80 hover:bg-white/5 hover:text-white'}`}
-                            >
+                            <Button key={item.sectionId} type="button" variant="ghost" onClick={() => goToSection(item.sectionId)} className={mobileNavItemClass(item.sectionId)}>
                                 {item.label}
                             </Button>
                         ))}
