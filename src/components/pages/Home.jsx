@@ -92,12 +92,14 @@ function FeatureCard({ icon: Icon, title, description, compact = false }) {
 
 function StepCard({ icon: Icon, title, description }) {
     return (
-        <article className="animate-soft-rise rounded-[26px] border border-[#eef2f7] bg-white p-6 shadow-[0_16px_40px_rgba(15,23,42,0.06)]">
-            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#fff1e5] text-[#ff7a1a]">
+        <article className="flex gap-6 animate-soft-rise rounded-[26px] border border-[#eef2f7] bg-white p-6 shadow-[0_16px_40px_rgba(15,23,42,0.06)]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#fff1e5] text-[#ff7a1a]">
                 <Icon size={28} strokeWidth={2.1} />
             </div>
-            <h3 className="text-xl font-semibold text-slate-950">{title}</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-500">{description}</p>
+            <div className="">
+                <h3 className="text-xl font-semibold text-slate-950">{title}</h3>
+                <p className="text-sm leading-6 text-slate-500">{description}</p>
+            </div>
         </article>
     )
 }
@@ -215,9 +217,9 @@ export default function Home() {
                                     <StepCard key={item.title} {...item} />
                                 ))}
                             </div>
-                            <Button variant="outline" className="mt-8 h-auto rounded-2xl border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-950 shadow-sm hover:border-[#ff7a1a] hover:bg-white hover:text-[#ff7a1a]">
+                            {/* <Button variant="outline" className="mt-8 h-auto rounded-2xl border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-950 shadow-sm hover:border-[#ff7a1a] hover:bg-white hover:text-[#ff7a1a]">
                                 Book Your Ride Now
-                            </Button>
+                            </Button> */}
                         </div>
 
                         <aside className="relative overflow-hidden rounded-[34px] bg-slate-950 p-8 text-white shadow-[0_28px_80px_rgba(15,23,42,0.22)]">
