@@ -1,13 +1,13 @@
-import { NavLink } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { CarFront, Facebook, Instagram, Mail, MapPin, Phone, Twitter } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const footerLinks = {
     company: [
-        { label: 'Home', path: '/' },
-        { label: 'About Us', path: '/about' },
-        { label: 'Services', path: '/services' },
-        { label: 'Contact', path: '/contact' },
+        { label: 'Home', sectionId: 'home' },
+        { label: 'About Us', sectionId: 'about' },
+        { label: 'Services', sectionId: 'services' },
+        { label: 'Contact', sectionId: 'contact' },
     ],
     services: ['Economy Rides', 'Outstation Travel', 'Corporate Trips', 'Car Rentals'],
 }
@@ -19,6 +19,21 @@ const socialLinks = [
 ]
 
 export default function Footer() {
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    function goToSection(sectionId) {
+        const nextHash = `#${sectionId}`
+
+        if (location.pathname === '/' && location.hash === nextHash) {
+            const section = document.getElementById(sectionId)
+            section?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            return
+        }
+
+        navigate(`/${nextHash}`)
+    }
+
     return (
         <footer id="contact" className="bg-[linear-gradient(135deg,#0b1424,#18253b)] text-white">
             <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-10">
@@ -44,9 +59,9 @@ export default function Footer() {
                         <h3 className="text-lg font-semibold">Company</h3>
                         <div className="mt-5 space-y-3 text-sm text-slate-300">
                             {footerLinks.company.map((item) => (
-                                <NavLink key={item.path} to={item.path} className="block transition hover:text-[#ff7a1a]">
+                                <Button key={item.sectionId} type="button" variant="ghost" onClick={() => goToSection(item.sectionId)} className="block h-auto p-0 text-sm text-slate-300 hover:bg-transparent hover:text-[#ff7a1a]">
                                     {item.label}
-                                </NavLink>
+                                </Button>
                             ))}
                         </div>
                     </div>
